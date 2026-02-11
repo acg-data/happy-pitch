@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Palette, Rocket, MessageSquare, Target, Zap } from "lucide-react";
+import { Search, Palette, Rocket } from "lucide-react";
 
 interface Step {
   number: string;
@@ -67,7 +67,7 @@ export default function HowWeHelp({
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-purple-600 uppercase tracking-wider mb-3">
+          <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
             Our Process
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -81,7 +81,7 @@ export default function HowWeHelp({
         {/* Timeline */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-purple-200 via-purple-400 to-purple-200 transform md:-translate-x-1/2" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gray-200 transform md:-translate-x-1/2" />
 
           {/* Steps */}
           <div className="space-y-12">
@@ -93,13 +93,13 @@ export default function HowWeHelp({
                 }`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full border-4 border-white shadow-lg transform -translate-x-1/2 z-10" />
+                <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-gray-900 rounded-full border-4 border-white shadow-lg transform -translate-x-1/2 z-10" />
 
                 {/* Number Badge */}
-                <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl flex items-center justify-center border border-purple-100 md:w-1/2 ${
+                <div className={`flex-shrink-0 w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center border border-gray-100 md:w-1/2 ${
                   index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
                 }`}>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                  <span className="text-2xl font-bold text-gray-900">
                     {step.number}
                   </span>
                 </div>
@@ -111,7 +111,7 @@ export default function HowWeHelp({
                   <div className={`flex items-center gap-3 mb-3 ${
                     index % 2 === 0 ? "" : "md:justify-end"
                   }`}>
-                    <div className="w-10 h-10 bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg flex items-center justify-center text-purple-600">
+                    <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700">
                       {step.icon}
                     </div>
                     <h3 className="text-xl font-bold text-gray-900">
@@ -128,7 +128,7 @@ export default function HowWeHelp({
                       <li key={i} className={`flex items-center gap-2 text-sm text-gray-500 ${
                         index % 2 === 0 ? "" : "md:flex-row-reverse"
                       }`}>
-                        <span className="w-1.5 h-1.5 bg-purple-400 rounded-full flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0" />
                         {detail}
                       </li>
                     ))}

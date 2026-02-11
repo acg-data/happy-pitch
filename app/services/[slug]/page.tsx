@@ -25,7 +25,7 @@ const serviceData: Record<string, ServiceData> = {
     title: 'Corporate Presentations',
     subtitle: 'Board-ready decks that command attention.',
     description: 'From annual shareholder meetings to strategic board presentations, we create corporate materials that communicate your vision, performance, and strategy with institutional-grade clarity. Our presentations blend executive storytelling with data visualization to ensure your message resonates with directors, investors, and stakeholders.',
-    icon: <Building2 className="w-12 h-12 text-blue-600" />,
+    icon: <Building2 className="w-12 h-12 text-gray-700" />,
     features: [
       'Executive summary design with key metrics',
       'Financial performance visualization',
@@ -58,7 +58,7 @@ const serviceData: Record<string, ServiceData> = {
     title: 'Pitch Decks',
     subtitle: 'Fundraising materials that close rounds.',
     description: 'Whether you are raising Series A or Series E, our pitch decks tell your equity story with the precision and impact that investors expect. We understand what VCs and growth equity firms look for and structure your narrative to highlight traction, market opportunity, and team strength.',
-    icon: <Presentation className="w-12 h-12 text-purple-600" />,
+    icon: <Presentation className="w-12 h-12 text-gray-700" />,
     features: [
       'Problem-solution framework',
       'Market size and opportunity analysis',
@@ -91,7 +91,7 @@ const serviceData: Record<string, ServiceData> = {
     title: 'Investor Memos',
     subtitle: 'Compelling narratives for sophisticated capital.',
     description: 'Investment memos are the foundation of institutional fundraising. We craft memos that articulate your thesis, demonstrate track record, and build confidence with LPs. Our memos combine rigorous analysis with accessible storytelling to meet the standards of the most discerning investors.',
-    icon: <FileText className="w-12 h-12 text-emerald-600" />,
+    icon: <FileText className="w-12 h-12 text-gray-700" />,
     features: [
       'Investment thesis articulation',
       'Track record analysis',
@@ -124,7 +124,7 @@ const serviceData: Record<string, ServiceData> = {
     title: 'CIMs',
     subtitle: 'Confidential Information Memorandums that drive deals.',
     description: 'The CIM is your company is story in its most comprehensive form. We create CIMs that present your business opportunity with the depth and polish that strategic and financial buyers expect. From financial history to growth levers, every section is crafted to build value and drive competitive tension.',
-    icon: <Briefcase className="w-12 h-12 text-amber-600" />,
+    icon: <Briefcase className="w-12 h-12 text-gray-700" />,
     features: [
       'Business overview and history',
       'Market and industry analysis',
@@ -157,7 +157,7 @@ const serviceData: Record<string, ServiceData> = {
     title: 'Sales Decks',
     subtitle: 'Enterprise materials that win deals.',
     description: 'B2B sales requires materials that speak to multiple stakeholders and address complex buying processes. We create sales decks that articulate value proposition, demonstrate ROI, and overcome objections. From first call to board presentation, our decks help you advance deals faster.',
-    icon: <TrendingUp className="w-12 h-12 text-rose-600" />,
+    icon: <TrendingUp className="w-12 h-12 text-gray-700" />,
     features: [
       'Value proposition framework',
       'ROI and business case calculators',
@@ -217,7 +217,7 @@ export default function ServicePage({
     return (
       <div className="pt-32 pb-20 text-center">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Service Not Found</h1>
-        <Link href="/" className="text-blue-600 hover:underline">
+        <Link href="/" className="text-gray-600 hover:underline">
           Return Home
         </Link>
       </div>
@@ -238,7 +238,7 @@ export default function ServicePage({
           </Link>
           <div className="max-w-3xl">
             <div className="mb-6">{service.icon}</div>
-            <p className="text-sm font-semibold text-purple-600 uppercase tracking-wider mb-3">
+            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
               {service.title}
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
@@ -280,8 +280,8 @@ export default function ServicePage({
               <ul className="space-y-4">
                 {service.useCases.map((useCase, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <ChevronRight className="w-3.5 h-3.5 text-purple-600" />
+                    <div className="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <ChevronRight className="w-3.5 h-3.5 text-gray-700" />
                     </div>
                     <span className="text-gray-700">{useCase}</span>
                   </li>
@@ -295,8 +295,8 @@ export default function ServicePage({
               <ul className="space-y-4">
                 {service.deliverables.map((deliverable, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3.5 h-3.5 text-blue-600" />
+                    <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3.5 h-3.5 text-white" />
                     </div>
                     <span className="text-gray-700">{deliverable}</span>
                   </li>
@@ -324,7 +324,7 @@ export default function ServicePage({
               <Link
                 key={industry}
                 href={`/industries/${industry}`}
-                className="px-6 py-3 bg-white rounded-full border border-gray-200 text-gray-700 hover:border-purple-600 hover:text-purple-600 transition-colors"
+                className="px-6 py-3 bg-white rounded-full border border-gray-200 text-gray-700 hover:border-gray-900 hover:text-gray-900 transition-colors"
               >
                 {industry.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
               </Link>

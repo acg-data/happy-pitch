@@ -22,7 +22,6 @@ const services = [
     subtitle: 'Board-ready decks that command attention',
     description: 'Annual shareholder presentations, strategic board decks, and executive communications with institutional-grade polish.',
     icon: Building2,
-    color: 'blue',
   },
   {
     slug: 'pitch-decks',
@@ -30,7 +29,6 @@ const services = [
     subtitle: 'Fundraising materials that close rounds',
     description: 'Investor-ready pitch decks for Series A through Series E that articulate your equity story with clarity and impact.',
     icon: Presentation,
-    color: 'purple',
   },
   {
     slug: 'investor-memos',
@@ -38,7 +36,6 @@ const services = [
     subtitle: 'Compelling narratives for sophisticated capital',
     description: 'Investment memos that articulate your thesis, demonstrate track record, and build confidence with LPs.',
     icon: FileText,
-    color: 'emerald',
   },
   {
     slug: 'cims',
@@ -46,7 +43,6 @@ const services = [
     subtitle: 'Confidential Information Memorandums that drive deals',
     description: 'Comprehensive sell-side materials that present your business opportunity with depth, polish, and strategic insight.',
     icon: Briefcase,
-    color: 'amber',
   },
   {
     slug: 'sales-decks',
@@ -54,17 +50,8 @@ const services = [
     subtitle: 'Enterprise materials that win deals',
     description: 'B2B sales presentations that articulate value proposition, demonstrate ROI, and accelerate complex buying cycles.',
     icon: TrendingUp,
-    color: 'rose',
   },
 ];
-
-const colorClasses: Record<string, { bg: string; text: string; border: string }> = {
-  blue: { bg: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-200' },
-  purple: { bg: 'bg-purple-50', text: 'text-purple-600', border: 'border-purple-200' },
-  emerald: { bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200' },
-  amber: { bg: 'bg-amber-50', text: 'text-amber-600', border: 'border-amber-200' },
-  rose: { bg: 'bg-rose-50', text: 'text-rose-600', border: 'border-rose-200' },
-};
 
 export default function ServicesPage() {
   return (
@@ -73,7 +60,7 @@ export default function ServicesPage() {
       <section className="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-purple-600 uppercase tracking-wider mb-3">
+            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
               Our Services
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
@@ -92,18 +79,17 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => {
-              const colors = colorClasses[service.color];
               const Icon = service.icon;
               return (
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className="group block bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-lg transition-all hover:border-purple-300"
+                  className="group block bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-lg transition-all hover:border-gray-300"
                 >
-                  <div className={`w-14 h-14 ${colors.bg} rounded-xl flex items-center justify-center mb-6`}>
-                    <Icon className={`w-7 h-7 ${colors.text}`} />
+                  <div className="w-14 h-14 bg-gray-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-100 transition-colors">
+                    <Icon className="w-7 h-7 text-gray-700" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {service.title}
                   </h3>
                   <p className="text-sm font-medium text-gray-500 mb-4">
@@ -112,9 +98,9 @@ export default function ServicesPage() {
                   <p className="text-gray-600 mb-6">
                     {service.description}
                   </p>
-                  <div className="flex items-center gap-2 text-purple-600 font-medium">
+                  <div className="flex items-center gap-2 text-gray-900 font-medium group-hover:gap-3 transition-all">
                     Learn More
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4" />
                   </div>
                 </Link>
               );
@@ -142,7 +128,7 @@ export default function ServicesPage() {
               { step: '04', title: 'Refine', desc: 'Iterate based on feedback until perfect' },
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="text-4xl font-bold text-purple-200 mb-4">{item.step}</div>
+                <div className="text-4xl font-bold text-gray-200 mb-4">{item.step}</div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>

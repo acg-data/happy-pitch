@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ChevronRight, ArrowLeft, Beaker, TrendingUp, Building2, FileText, Rocket, Home, Monitor, UtensilsCrossed, Cloud, ShoppingBag } from 'lucide-react';
+import { ChevronRight, ArrowLeft } from 'lucide-react';
 import HowWeHelp from '../../sections/HowWeHelp';
 import WhyChooseUs from '../../sections/WhyChooseUs';
 
@@ -12,19 +12,7 @@ interface IndustryData {
   challenges: string[];
   ctaText: string;
   howWeHelpTitle?: string;
-  howWeHelpSteps?: {
-    number: string;
-    title: string;
-    description: string;
-    icon: React.ReactNode;
-    details: string[];
-  }[];
   whyChooseTitle?: string;
-  whyChooseReasons?: {
-    icon: React.ReactNode;
-    title: string;
-    description: string;
-  }[];
 }
 
 const industryData: Record<string, IndustryData> = {
@@ -271,7 +259,7 @@ export default function IndustryPage({
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Industry Not Found
         </h1>
-        <Link href="/" className="text-blue-600 hover:underline">
+        <Link href="/" className="text-gray-600 hover:underline">
           Return Home
         </Link>
       </div>
@@ -291,7 +279,7 @@ export default function IndustryPage({
             Back to Industries
           </Link>
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-purple-600 uppercase tracking-wider mb-3">
+            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
               {industry.title}
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
@@ -339,8 +327,8 @@ export default function IndustryPage({
               <ul className="space-y-4">
                 {industry.challenges.map((challenge, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <ChevronRight className="w-3.5 h-3.5 text-purple-600" />
+                    <div className="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <ChevronRight className="w-3.5 h-3.5 text-gray-700" />
                     </div>
                     <span className="text-gray-700">{challenge}</span>
                   </li>
