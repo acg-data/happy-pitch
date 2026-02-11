@@ -37,7 +37,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-gray-500">
-              Collateral Partners provides
+              Happy Pitch provides
               <br />
               financial communication
               <br />

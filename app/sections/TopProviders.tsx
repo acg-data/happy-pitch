@@ -4,93 +4,97 @@ import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 
 const TopProviders = () => {
-  const [activeTab, setActiveTab] = useState('transaction');
+  const [activeTab, setActiveTab] = useState('fundraising');
 
   const tabs = [
-    { id: 'transaction', label: 'Transaction Readiness' },
-    { id: 'investor', label: 'Investor Relations' },
-    { id: 'business', label: 'Business Development' },
-    { id: 'strategic', label: 'Strategic Positioning' },
+    { id: 'fundraising', label: 'Fundraising' },
+    { id: 'ma', label: 'M&A Advisory' },
+    { id: 'investor', label: 'Investor Communications' },
+    { id: 'growth', label: 'Growth & Sales' },
   ];
 
   const tabContent = {
-    transaction: {
-      title: 'Transaction Readiness',
+    fundraising: {
+      title: 'Fundraising',
+      image: '/Fundraising.avif',
       sections: [
         {
-          subtitle: 'Investment Memorandums',
+          subtitle: 'Pitch Decks',
           description:
-            'Deal books that secure funding and close acquisitions by presenting clear investment cases backed by data and strategic rationale.',
+            'Investor-ready decks that tell your equity story with data, design, and conviction. Built to win meetings and close rounds.',
+        },
+        {
+          subtitle: 'Fund Marketing Materials',
+          description:
+            'LP-facing collateral that communicates strategy, track record, and differentiation with institutional polish.',
+        },
+        {
+          subtitle: 'Data Room Presentations',
+          description:
+            'Structured materials that accelerate due diligence and build investor confidence from the first click.',
+        },
+      ],
+    },
+    ma: {
+      title: 'M&A Advisory',
+      image: '/M&A.avif',
+      sections: [
+        {
+          subtitle: 'Confidential Information Memorandums',
+          description:
+            'Sell-side CIMs that present the full business opportunity with clarity, credibility, and institutional-grade formatting.',
         },
         {
           subtitle: 'Management Presentations',
           description:
-            'Executive pitch decks that drive M&A processes by articulating company value, market position, and growth potential.',
+            'Executive decks that articulate value, growth levers, and strategic fit for potential buyers and partners.',
         },
         {
-          subtitle: 'Company Profiles',
+          subtitle: 'Buyer & Target Profiles',
           description:
-            'Strategic overviews that position firms for sale, partnerships, or investment by highlighting competitive advantages and value drivers.',
+            'Concise overviews that position acquisition targets or potential partners effectively for deal teams.',
         },
       ],
     },
     investor: {
-      title: 'Investor Relations',
+      title: 'Investor Communications',
+      image: '/Investor Communications.avif',
       sections: [
         {
-          subtitle: 'Annual Reports',
+          subtitle: 'Quarterly Reports',
           description:
-            'Comprehensive reports that communicate financial performance and strategic direction to stakeholders with clarity and impact.',
+            'Polished LP updates that communicate portfolio performance, market outlook, and strategic direction.',
         },
         {
-          subtitle: 'Earnings Presentations',
+          subtitle: 'Annual Meeting Decks',
           description:
-            'Quarterly updates that translate complex financial data into compelling narratives for investors and analysts.',
+            'Board-ready materials that inform, align, and inspire stakeholder confidence at every level.',
         },
         {
-          subtitle: 'Investor Decks',
+          subtitle: 'Earnings & IR Presentations',
           description:
-            'Professional materials that build confidence and support valuation during fundraising and IPO processes.',
+            'Public-facing materials that translate complex financial data into compelling investor narratives.',
         },
       ],
     },
-    business: {
-      title: 'Business Development',
+    growth: {
+      title: 'Growth & Sales',
+      image: '/Growth & Sales.avif',
       sections: [
         {
-          subtitle: 'Sales Decks',
+          subtitle: 'Enterprise Sales Decks',
           description:
-            'Persuasive presentations that communicate value propositions and drive conversion with enterprise clients.',
+            'Persuasive presentations that communicate your value proposition clearly and close deals faster.',
         },
         {
-          subtitle: 'Proposal Templates',
+          subtitle: 'Product & Platform Overviews',
           description:
-            'Standardized formats that ensure consistency and professionalism across all client-facing materials.',
+            'Clear, compelling materials that make complex solutions easy to understand for any audience.',
         },
         {
-          subtitle: 'Capability Statements',
+          subtitle: 'Case Studies & Proof Points',
           description:
-            'Concise overviews that establish credibility and differentiate your firm from competitors.',
-        },
-      ],
-    },
-    strategic: {
-      title: 'Strategic Positioning',
-      sections: [
-        {
-          subtitle: 'Market Analysis',
-          description:
-            'Data-driven insights that identify opportunities and inform strategic decision-making.',
-        },
-        {
-          subtitle: 'Competitive Intelligence',
-          description:
-            'Comprehensive assessments that reveal competitive landscape and positioning opportunities.',
-        },
-        {
-          subtitle: 'Brand Strategy',
-          description:
-            'Strategic frameworks that align messaging with business objectives and target audiences.',
+            'Evidence-backed narratives that build credibility, demonstrate impact, and drive conversion.',
         },
       ],
     },
@@ -120,11 +124,10 @@ const TopProviders = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
-                activeTab === tab.id
-                  ? 'bg-black text-white'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${activeTab === tab.id
+                ? 'bg-black text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
             >
               {tab.label}
             </button>
@@ -160,8 +163,8 @@ const TopProviders = () => {
             {/* Right Content - Image */}
             <div className="relative">
               <img
-                src="/tablet-mockup.png"
-                alt="Financial Dashboard"
+                src={currentContent.image}
+                alt={currentContent.title}
                 className="w-full h-auto rounded-xl shadow-lg"
               />
             </div>
