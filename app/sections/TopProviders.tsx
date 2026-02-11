@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
 const TopProviders = () => {
@@ -17,84 +18,100 @@ const TopProviders = () => {
     fundraising: {
       title: 'Fundraising',
       image: '/Fundraising.avif',
+      link: '/services/pitch-decks',
       sections: [
         {
           subtitle: 'Pitch Decks',
           description:
             'Investor-ready decks that tell your equity story with data, design, and conviction. Built to win meetings and close rounds.',
+          link: '/services/pitch-decks',
         },
         {
-          subtitle: 'Fund Marketing Materials',
+          subtitle: 'Investor Memos',
           description:
-            'LP-facing collateral that communicates strategy, track record, and differentiation with institutional polish.',
+            'LP-facing Happy Pitch! materials that communicate strategy, track record, and differentiation with institutional polish.',
+          link: '/services/investor-memos',
         },
         {
           subtitle: 'Data Room Presentations',
           description:
             'Structured materials that accelerate due diligence and build investor confidence from the first click.',
+          link: '/services',
         },
       ],
     },
     ma: {
       title: 'M&A Advisory',
       image: '/M&A.avif',
+      link: '/services/cims',
       sections: [
         {
           subtitle: 'Confidential Information Memorandums',
           description:
             'Sell-side CIMs that present the full business opportunity with clarity, credibility, and institutional-grade formatting.',
+          link: '/services/cims',
         },
         {
           subtitle: 'Management Presentations',
           description:
             'Executive decks that articulate value, growth levers, and strategic fit for potential buyers and partners.',
+          link: '/services/corporate-presentation',
         },
         {
           subtitle: 'Buyer & Target Profiles',
           description:
             'Concise overviews that position acquisition targets or potential partners effectively for deal teams.',
+          link: '/services',
         },
       ],
     },
     investor: {
       title: 'Investor Communications',
       image: '/Investor Communications.avif',
+      link: '/services/corporate-presentation',
       sections: [
         {
           subtitle: 'Quarterly Reports',
           description:
             'Polished LP updates that communicate portfolio performance, market outlook, and strategic direction.',
+          link: '/services/investor-memos',
         },
         {
           subtitle: 'Annual Meeting Decks',
           description:
             'Board-ready materials that inform, align, and inspire stakeholder confidence at every level.',
+          link: '/services/corporate-presentation',
         },
         {
           subtitle: 'Earnings & IR Presentations',
           description:
             'Public-facing materials that translate complex financial data into compelling investor narratives.',
+          link: '/services/corporate-presentation',
         },
       ],
     },
     growth: {
       title: 'Growth & Sales',
       image: '/Growth & Sales.avif',
+      link: '/services/sales-decks',
       sections: [
         {
           subtitle: 'Enterprise Sales Decks',
           description:
             'Persuasive presentations that communicate your value proposition clearly and close deals faster.',
+          link: '/services/sales-decks',
         },
         {
           subtitle: 'Product & Platform Overviews',
           description:
             'Clear, compelling materials that make complex solutions easy to understand for any audience.',
+          link: '/services/sales-decks',
         },
         {
           subtitle: 'Case Studies & Proof Points',
           description:
             'Evidence-backed narratives that build credibility, demonstrate impact, and drive conversion.',
+          link: '/services/sales-decks',
         },
       ],
     },
@@ -144,20 +161,23 @@ const TopProviders = () => {
               </h3>
               <div className="space-y-6">
                 {currentContent.sections.map((section, index) => (
-                  <div key={index}>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                  <Link key={index} href={section.link || '/services'} className="block group">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
                       {section.subtitle}
                     </h4>
                     <p className="text-sm text-gray-600 leading-relaxed">
                       {section.description}
                     </p>
-                  </div>
+                  </Link>
                 ))}
               </div>
-              <button className="mt-8 text-sm font-medium text-gray-900 flex items-center gap-1 hover:gap-2 transition-all">
+              <Link 
+                href={currentContent.link || '/services'}
+                className="mt-8 text-sm font-medium text-gray-900 flex items-center gap-1 hover:gap-2 transition-all group"
+              >
                 Explore Solutions
-                <ChevronRight className="w-4 h-4" />
-              </button>
+                <ChevronRight className="w-4 h-4 group-hover:text-purple-600" />
+              </Link>
             </div>
 
             {/* Right Content - Image */}

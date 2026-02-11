@@ -4,21 +4,21 @@ const TrustedBy = () => {
   const cards = [
     {
       tag: 'Real Estate',
-      title: 'Elevate Your Real Estate Marketing Collateral',
+      title: 'Elevate Your Real Estate Marketing with Happy Pitch!',
       cta: 'Learn More',
       logo: 'KBS',
       fileType: 'PDF',
     },
     {
       tag: 'Real Estate',
-      title: 'Elevate Your Real Estate Marketing Collateral',
+      title: 'Elevate Your Real Estate Marketing with Happy Pitch!',
       cta: 'Learn More',
       logo: 'KBS',
       fileType: 'PDF',
     },
     {
       tag: 'Real Estate',
-      title: 'Elevate Your Real Estate Marketing Collateral',
+      title: 'Elevate Your Real Estate Marketing with Happy Pitch!',
       cta: 'Learn More',
       logo: 'KBS',
       fileType: 'PDF',
