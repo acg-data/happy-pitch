@@ -8,7 +8,6 @@ import ComplexStrategies from "./sections/ComplexStrategies";
 import TrustedBy from "./sections/TrustedBy";
 import Testimonials from "./sections/Testimonials";
 import CTASection from "./sections/CTASection";
-import Footer from "./sections/Footer";
 
 export default function Home() {
   return (
@@ -25,7 +24,6 @@ export default function Home() {
         <Testimonials />
         <CTASection />
       </main>
-      <Footer />
     </div>
   );
 }
