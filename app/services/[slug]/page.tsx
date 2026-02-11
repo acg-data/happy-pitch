@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ChevronRight, ArrowLeft, Check, FileText, Presentation, TrendingUp, Building2, Briefcase } from 'lucide-react';
+import HowWeHelp from '../../sections/HowWeHelp';
+import WhyChooseUs from '../../sections/WhyChooseUs';
 
 interface ServiceData {
   title: string;
@@ -12,6 +14,10 @@ interface ServiceData {
   deliverables: string[];
   ctaText: string;
   relatedIndustries: string[];
+  howWeHelpTitle?: string;
+  howWeHelpSubtitle?: string;
+  whyChooseTitle?: string;
+  whyChooseSubtitle?: string;
 }
 
 const serviceData: Record<string, ServiceData> = {
@@ -43,6 +49,10 @@ const serviceData: Record<string, ServiceData> = {
     ],
     ctaText: 'Build Your Corporate Presentation',
     relatedIndustries: ['private-equity', 'venture-capital', 'family-office'],
+    howWeHelpTitle: 'How We Build Corporate Presentations',
+    howWeHelpSubtitle: 'A proven process designed to deliver board-ready materials that command attention.',
+    whyChooseTitle: 'Why Choose Us for Corporate Presentations',
+    whyChooseSubtitle: 'What sets us apart when creating materials for boards, investors, and stakeholders.',
   },
   'pitch-decks': {
     title: 'Pitch Decks',
@@ -72,6 +82,10 @@ const serviceData: Record<string, ServiceData> = {
     ],
     ctaText: 'Build Your Pitch Deck',
     relatedIndustries: ['saas', 'biotech', 'venture-capital', 'digital-transformation'],
+    howWeHelpTitle: 'How We Build Pitch Decks',
+    howWeHelpSubtitle: 'A battle-tested process that has helped raise over $100M in funding.',
+    whyChooseTitle: 'Why Choose Us for Pitch Decks',
+    whyChooseSubtitle: 'What makes our pitch decks stand out in crowded investor inboxes.',
   },
   'investor-memos': {
     title: 'Investor Memos',
@@ -101,6 +115,10 @@ const serviceData: Record<string, ServiceData> = {
     ],
     ctaText: 'Build Your Investor Memo',
     relatedIndustries: ['private-equity', 'private-credit', 'venture-capital', 'family-office'],
+    howWeHelpTitle: 'How We Build Investor Memos',
+    howWeHelpSubtitle: 'A rigorous process that creates memos worthy of sophisticated institutional capital.',
+    whyChooseTitle: 'Why Choose Us for Investor Memos',
+    whyChooseSubtitle: 'What makes our memos resonate with the most discerning limited partners.',
   },
   'cims': {
     title: 'CIMs',
@@ -130,6 +148,10 @@ const serviceData: Record<string, ServiceData> = {
     ],
     ctaText: 'Build Your CIM',
     relatedIndustries: ['private-equity', 'biotech', 'saas', 'cpg'],
+    howWeHelpTitle: 'How We Build CIMs',
+    howWeHelpSubtitle: 'A comprehensive process that creates CIMs worthy of premium valuations.',
+    whyChooseTitle: 'Why Choose Us for CIMs',
+    whyChooseSubtitle: 'What makes our CIMs stand out to strategic and financial buyers.',
   },
   'sales-decks': {
     title: 'Sales Decks',
@@ -159,6 +181,10 @@ const serviceData: Record<string, ServiceData> = {
     ],
     ctaText: 'Build Your Sales Deck',
     relatedIndustries: ['saas', 'digital-transformation', 'food-beverages', 'cpg'],
+    howWeHelpTitle: 'How We Build Sales Decks',
+    howWeHelpSubtitle: 'A buyer-centric process that creates materials that advance deals faster.',
+    whyChooseTitle: 'Why Choose Us for Sales Decks',
+    whyChooseSubtitle: 'What makes our sales decks convert prospects into customers.',
   },
 };
 
@@ -204,11 +230,11 @@ export default function ServicePage({
       <section className="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            href="/"
+            href="/services"
             className="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Home
+            Back to Services
           </Link>
           <div className="max-w-3xl">
             <div className="mb-6">{service.icon}</div>
@@ -222,6 +248,12 @@ export default function ServicePage({
           </div>
         </div>
       </section>
+
+      {/* How We Help */}
+      <HowWeHelp 
+        title={service.howWeHelpTitle}
+        subtitle={service.howWeHelpSubtitle}
+      />
 
       {/* Features Grid */}
       <section className="py-16">
@@ -274,6 +306,12 @@ export default function ServicePage({
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <WhyChooseUs 
+        title={service.whyChooseTitle}
+        subtitle={service.whyChooseSubtitle}
+      />
 
       {/* Related Industries */}
       <section className="py-16 bg-gray-50">
