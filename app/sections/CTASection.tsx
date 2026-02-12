@@ -26,10 +26,10 @@ const CTASection = () => {
             deck cost you your next allocation, let Happy Pitch make sure your
             materials match your ambition.
           </p>
-          <button className="px-6 py-3 text-sm font-medium text-gray-900 bg-white rounded-full hover:bg-gray-100 transition-colors flex items-center gap-2">
+          <a href="#contact" className="px-6 py-3 text-sm font-medium text-gray-900 bg-white rounded-full hover:bg-gray-100 transition-colors flex items-center gap-2 inline-flex">
             Book Consultation
             <ChevronRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
       </div>
     </section>

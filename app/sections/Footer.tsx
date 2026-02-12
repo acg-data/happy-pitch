@@ -3,16 +3,16 @@ import { ChevronRight } from 'lucide-react';
 const Footer = () => {
   const footerLinks = {
     column1: [
-      { label: 'Home', href: '#' },
-      { label: 'Who we serve', href: '#services' },
-      { label: 'Solutions', href: '#solutions' },
-      { label: 'Resources', href: '#resources' },
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Industries', href: '/industries' },
+      { label: 'Locations', href: '/pseo' },
     ],
     column2: [
-      { label: 'Home', href: '#' },
-      { label: 'Who we serve', href: '#services' },
-      { label: 'Solutions', href: '#solutions' },
-      { label: 'Resources', href: '#resources' },
+      { label: 'Pitch Decks', href: '/services/pitch-decks' },
+      { label: 'Investor Memos', href: '/services/investor-memos' },
+      { label: 'SaaS', href: '/industries/saas' },
+      { label: 'Private Equity', href: '/industries/private-equity' },
     ],
   };
 
@@ -89,10 +89,10 @@ const Footer = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col gap-3">
-            <button className="px-4 py-2 text-sm font-medium text-white bg-black rounded-full hover:bg-gray-800 transition-colors flex items-center justify-center gap-1">
+            <a href="#contact" className="px-4 py-2 text-sm font-medium text-white bg-black rounded-full hover:bg-gray-800 transition-colors flex items-center justify-center gap-1">
               Request Samples
               <ChevronRight className="w-4 h-4" />
-            </button>
+            </a>
             <button className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center gap-1">
               Case Studies
               <ChevronRight className="w-4 h-4" />

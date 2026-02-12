@@ -194,24 +194,26 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const service = serviceData[params.slug];
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const service = serviceData[resolvedParams.slug];
   return {
     title: `${service?.title || 'Service'} | Happy Pitch`,
     description: service?.subtitle || 'Professional presentation services',
   };
 }
 
-export default function ServicePage({
+export default async function ServicePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const service = serviceData[params.slug];
+  const resolvedParams = await params;
+  const service = serviceData[resolvedParams.slug];
 
   if (!service) {
     return (

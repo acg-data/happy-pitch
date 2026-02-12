@@ -69,9 +69,10 @@ const Navbar = () => {
 
   const navLinks = [
     { label: 'Home', href: '/' },
+    { label: 'Services', href: '/services' },
     { label: 'Industries', href: '/industries' },
-    { label: 'Solutions', href: '#solutions' },
-    { label: 'Resources', href: '#resources' },
+    { label: 'Locations', href: '/pseo' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -214,10 +215,10 @@ const Navbar = () => {
 
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center gap-2">
-              <button className="px-4 py-2 text-sm font-medium text-white bg-black rounded-full hover:bg-gray-800 transition-all flex items-center gap-1">
+              <Link href="#contact" className="px-4 py-2 text-sm font-medium text-white bg-black rounded-full hover:bg-gray-800 transition-all flex items-center gap-1">
                 Request Samples
                 <ChevronRight className="w-4 h-4" />
-              </button>
+              </Link>
               <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 rounded-full border border-gray-300 transition-all flex items-center gap-1">
                 Case Studies
                 <ChevronRight className="w-4 h-4" />
@@ -319,10 +320,10 @@ const Navbar = () => {
                 )}
 
                 <div className="flex flex-col gap-2 pt-4 px-2">
-                  <button className="px-4 py-2.5 text-sm font-medium text-white bg-black rounded-full hover:bg-gray-800 transition-all flex items-center justify-center gap-1">
+                  <Link href="#contact" className="px-4 py-2.5 text-sm font-medium text-white bg-black rounded-full hover:bg-gray-800 transition-all flex items-center justify-center gap-1" onClick={() => setIsMobileMenuOpen(false)}>
                     Request Samples
                     <ChevronRight className="w-4 h-4" />
-                  </button>
+                  </Link>
                   <button className="px-4 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-full transition-all flex items-center justify-center gap-1">
                     Case Studies
                     <ChevronRight className="w-4 h-4" />

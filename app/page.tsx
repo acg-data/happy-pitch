@@ -8,6 +8,7 @@ import ComplexStrategies from "./sections/ComplexStrategies";
 import TrustedBy from "./sections/TrustedBy";
 import Testimonials from "./sections/Testimonials";
 import CTASection from "./sections/CTASection";
+import ContactSection from "./sections/ContactSection";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <TrustedBy />
         <Testimonials />
         <CTASection />
+        <ContactSection />
       </main>
     </div>
   );

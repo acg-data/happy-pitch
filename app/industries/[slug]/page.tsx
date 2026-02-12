@@ -234,24 +234,26 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const industry = industryData[params.slug];
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const industry = industryData[resolvedParams.slug];
   return {
     title: `${industry?.title || 'Industry'} | Happy Pitch`,
     description: industry?.subtitle || 'Industry-specific pitch deck services',
   };
 }
 
-export default function IndustryPage({
+export default async function IndustryPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const industry = industryData[params.slug];
+  const resolvedParams = await params;
+  const industry = industryData[resolvedParams.slug];
 
   if (!industry) {
     return (
